@@ -1,4 +1,4 @@
-# ButterFaces - OmniFaces integration
+# ButterFaces - TomEE 1.7.4 and autocomplete
 
 Simple example to use ButterFaces Autocomplete with TomEE 1.7.4 and MyFaces 2.1.17
 
