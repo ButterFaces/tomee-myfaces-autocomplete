@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:b="http://butterfaces.org/components"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+    <title>ButterFaces: a lightweight and modern JSF framework</title>
+    <meta http-equiv="Content-Type" content="application/xhtml+xml;charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="TomEE tests"/>
+    <meta name="author" content="Lars Michaelis"/>
+    <meta name="robots" content="index, follow"/>
+    <meta name="revisit-after" content="7 days"/>
+    <meta name="DISTRIBUTION" content="GLOBAL"/>
+    <meta http-equiv="PRAGMA" content="NO-CACHE"/>
+    <meta http-equiv="Expires" content="604800"/>
+</h:head>
+
+<h:body styleClass="body">
+    <f:view>
+
+        <div class="content">
+            <div class="container">
+                <h:form prependId="false" style="padding-top: 20px" styleClass="row">
+                    <b:text label="input" value="#{simpleBean.value}" autoFocus="true" styleClass="col-md-6">
+                        <f:ajax execute="@this" event="keyup" render="output"/>
+                        <b:autoComplete autoComplete="#{simpleBean.autoCompleteModel}" />
+                        <b:tooltip>
+                            Try it with <strong>ButterFaces</strong> or <strong>test</strong>
+                        </b:tooltip>
+                    </b:text>
+
+                    <b:text id="output" label="output" value="#{simpleBean.value}" readonly="true" styleClass="col-md-6"/>
+                </h:form>
+            </div>
+        </div>
+
+        <b:activateLibraries/>
+
+    </f:view>
+</h:body>
+</html>
