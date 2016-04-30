@@ -34,6 +34,14 @@ public class SimpleBean implements Serializable {
         autoCompleteValues.add("JSF 2.2");
     }
 
+    public List<String> getListOfSimpleValues() {
+        final List<String> list = new ArrayList<>();
+        list.add("foo");
+        list.add("bar");
+        list.add("baz");
+        return list;
+    }
+
     public AutoCompleteModel getAutoCompleteModel() {
         return value1 -> {
             final List<String> values = new ArrayList<>();

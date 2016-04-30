@@ -24,17 +24,26 @@
 
         <div class="content">
             <div class="container">
-                <h:form prependId="false" style="padding-top: 20px" styleClass="row">
-                    <b:text label="input" value="#{simpleBean.value}" autoFocus="true" styleClass="col-md-6">
-                        <f:ajax execute="@this" event="keyup" render="output"/>
-                        <b:autoComplete autoComplete="#{simpleBean.autoCompleteModel}" />
-                        <b:tooltip>
-                            Try it with <strong>ButterFaces</strong> or <strong>test</strong>
-                        </b:tooltip>
-                    </b:text>
+                <b:section label="auto complete" style="padding-top: 20px">
+                    <h:form prependId="false" styleClass="row">
+                        <b:text label="input" value="#{simpleBean.value}" autoFocus="true" styleClass="col-md-6">
+                            <f:ajax execute="@this" event="keyup" render="output"/>
+                            <b:autoComplete autoComplete="#{simpleBean.autoCompleteModel}"/>
+                            <b:tooltip>
+                                Try it with <strong>ButterFaces</strong> or <strong>test</strong>
+                            </b:tooltip>
+                        </b:text>
 
-                    <b:text id="output" label="output" value="#{simpleBean.value}" readonly="true" styleClass="col-md-6"/>
-                </h:form>
+                        <b:text id="output" label="output" value="#{simpleBean.value}" readonly="true"
+                                styleClass="col-md-6"/>
+                    </h:form>
+                </b:section>
+
+                <b:section label="repeat">
+                    <b:repeat value="#{simpleBean.listOfSimpleValues}" var="item">
+                        <b:text value="#{item}" disabled="true" hideLabel="true"/>
+                    </b:repeat>
+                </b:section>
             </div>
         </div>
 
